@@ -1,73 +1,99 @@
-# Comparative Analysis of Immune Cell Composition in Nasopharyngeal Carcinoma Using scRNA-seq
+# Comparative Analysis of Immune Cell Composition Between Normal and Tumor Tissue Using scRNA-seq
 
-## Project Overview
+**M.Sc. Biotechnology dissertation project**
+**Dataset:** GSE150430 — nasopharyngeal carcinoma (NPC)
+**Submitted at:** Mewar University
 
-This MSc Biotechnology dissertation investigates differences in cellular composition between normal and tumour tissue using single-cell RNA sequencing (scRNA-seq) data from nasopharyngeal carcinoma (NPC).
+## Project overview
 
-The project focuses on exploring annotated cell populations, comparing their representation between normal and tumour groups, and documenting a reproducible computational analysis workflow.
+This project investigated cell populations in normal and tumor tissue in a publicly available NPC single-cell RNA-sequencing dataset. The submitted work reports cluster visualisation, cell-type annotation, marker-gene analysis, and a comparison of cellular composition between the two groups.
 
-## Dataset
+The methods described in the submitted presentation include data import into Seurat, quality assessment, normalization, dimensionality reduction, clustering, UMAP visualisation, cell-type annotation, marker-gene identification, and normal-versus-tumor comparison.
 
-- **Source:** NCBI Gene Expression Omnibus (GEO)
-- **Accession:** GSE150430
-- **Data:** Processed single-cell RNA-seq expression matrix with cell-type annotations
-- **Primary tools:** R, Seurat, dplyr, ggplot2
+## Results reported in the submitted dissertation
 
-## Dataset Summary
+These values reproduce the summary presented in the submitted thesis presentation; they are not presented here as an independent re-analysis.
 
-The saved Seurat object currently contains:
-
-| Metric | Value |
+| Metric | Value reported in submitted work |
 |---|---:|
-| Cells retained in the object | 47,086 |
+| Cells in saved Seurat object | 47,086 |
 | Normal cells | 2,518 |
-| Tumour cells | 44,568 |
-| Annotated cell populations | 26 |
+| Tumor cells | 44,568 |
+| Features in saved Seurat object | 199 |
 | Clusters | 17 |
-| Stored dimensionality reductions | PCA and UMAP |
+| Annotated cell populations | 26 |
 
-These figures describe the saved object and should not be interpreted as independent validation of every downstream result.
+## Figures from the submitted analysis
 
-## Analysis Scope
+The images below are preserved as outputs associated with the submitted work. They have not been regenerated from a complete, independently validated Seurat pipeline.
 
-The intended analysis workflow covers:
+### Cluster UMAP
 
-1. Inspection and preparation of the processed expression matrix
-2. Cell metadata and quality-control assessment
-3. Dimensionality reduction and clustering
-4. Visualisation of clusters and annotated cell populations
-5. Comparison of cell-type composition between normal and tumour groups
-6. Review of marker-gene results and summary tables
+![UMAP showing 17 clusters](figures/Figure_4_3_UMAP_Clusters_HighQuality.png)
 
-## Reproducibility and Current Validation
+### Annotated cell-type UMAP
 
-The source matrix contains substantially more gene rows than the saved Seurat object. The saved object contains 199 features across 47,086 cells, and its layer named `counts` contains fractional values.
+![UMAP annotated by cell type](figures/Figure_4_4_CellType_UMAP.png)
 
-These findings require further investigation before the saved PCA, UMAP, and marker-gene results can be treated as a verified genome-wide analysis. The original data and existing outputs are being preserved while the import and analysis workflow is reviewed.
+### Cell-type composition in tumor samples
 
-## Repository Structure
+![Tumor cell-type composition](figures/Figure1_Tumor_Cell_Composition.png)
 
-- `R/` — R analysis scripts
-- `scripts/` — supporting scripts
-- `figures/` — selected figures, added after review
-- `results/tables/` — reviewed aggregate summary tables
-- `docs/` — methods and supplementary documentation
-- `data/` — input data location; large source files are not committed
+### Normal-versus-tumor cell-type comparison
 
-## Tools and Skills
+![Normal-versus-tumor comparison](figures/Figure2_Normal_vs_Tumor_Comparison.png)
 
-- R programming
-- Seurat
-- Single-cell RNA-seq data analysis
-- Cell-type composition analysis
-- Data visualisation with ggplot2
-- Reproducible research and Git version control
+## Repository contents
 
-## Data Source
+```text
+.
+├── R/
+│   └── audit_source_metadata.R
+├── docs/
+│   ├── RECOVERED_COMMAND_AUDIT.md
+│   └── SUBMISSION_AND_VALIDATION_STATUS.md
+├── figures/
+│   └── submitted analysis figures
+└── results/
+    └── tables/
+        ├── source_group_celltype_counts.csv
+        └── source_group_celltype_percentages.csv
+```
 
-GEO accession: [GSE150430](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150430)
+The original compressed GEO input is not committed to this repository. It is large and remains in the local project data folder.
 
-## Project Status
+## Run the available source-metadata audit
 
-The repository is being organised for reproducibility and portfolio presentation. Figures, tables, and scripts will be added after their contents and analytical provenance have been reviewed.
+The script `R/audit_source_metadata.R` reads the source file's cell-barcode and cell-type metadata rows and writes aggregate counts and within-group percentages. **It does not rebuild the Seurat object, PCA, clustering, UMAP, or marker-gene results.**
 
+In Windows RStudio, open the repository as the working directory, then set the location of the original input file and run:
+
+```r
+Sys.setenv(
+  GSE150430_FILE = "C:/Users/HP/Documents/scRNAthesis/data/GSE150430_npc_scRNA_hg19_processed_data.txt.gz"
+)
+source("R/audit_source_metadata.R")
+```
+
+Change the path if the source file is stored elsewhere. The script writes only aggregate summary tables under `results/tables/`.
+
+## Reproducibility note
+
+A post-submission check found a discrepancy between the saved Seurat object and the full source-file metadata. The source metadata audit identified 48,584 cell barcodes (2,583 normal and 46,001 tumor), while the submitted object summary reports 47,086 cells (2,518 normal and 44,568 tumor). All 47,086 barcodes in the saved object were found in the source, but 1,498 source barcodes were absent from the object; the reason has not been established.
+
+The source file contains approximately 24,720 gene rows, while the saved object contains 199 features. The 199 retained feature-value rows matched their corresponding source rows across the saved cells, but this does not validate the work as a genome-wide analysis. The saved layer named `counts` contains fractional values, and `percent.mt` was zero for every saved cell. The original Seurat construction and dimensionality-reduction commands have not been recovered from the available logs.
+
+For these reasons, the figures and result counts above are described as **outputs from the submitted work**, not as independently reproduced final scientific results. The source metadata audit is a separate post-submission check, and the discrepancy remains unresolved. Details are recorded in [`docs/SUBMISSION_AND_VALIDATION_STATUS.md`](docs/SUBMISSION_AND_VALIDATION_STATUS.md).
+
+## Tools and skills represented
+
+- R and RStudio
+- Seurat object inspection and single-cell RNA-seq concepts
+- Cell metadata handling and Normal/Tumor grouping
+- Aggregate cell-type composition summaries
+- R-based figures and tables
+- Source-data checks and Git/GitHub project organisation
+
+## Data source
+
+NCBI Gene Expression Omnibus accession [GSE150430](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE150430).
