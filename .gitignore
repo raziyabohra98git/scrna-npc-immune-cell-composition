@@ -1,0 +1,23 @@
+# R session history
+.Rhistory
+*.Rhistory
+.RData
+*.rdata
+*.rds
+*.RDS
+
+# Original and large input data
+data/*
+!data/README.md
+*.gz
+
+# Cell-level or unreviewed outputs
+metadata.csv
+markers.csv
+cell_comparison.csv
+
+# Temporary and generated files
+.Rproj.user/
+.Ruserdata
+*.tmp
+*.log
