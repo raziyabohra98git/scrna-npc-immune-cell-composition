@@ -1,0 +1,52 @@
+"Group","CellType","Freq"
+"Normal","B cell-1",766
+"Tumor","B cell-1",5251
+"Normal","B cell-2",421
+"Tumor","B cell-2",4932
+"Normal","B cell-3",151
+"Tumor","B cell-3",746
+"Normal","B cell-4",51
+"Tumor","B cell-4",528
+"Normal","CAFs",2
+"Tumor","CAFs",50
+"Normal","CD4+ Tconv-1",71
+"Tumor","CD4+ Tconv-1",2287
+"Normal","CD4+ Tconv-2",46
+"Tumor","CD4+ Tconv-2",2166
+"Normal","CD4+ Tconv-3",48
+"Tumor","CD4+ Tconv-3",1076
+"Normal","CD4+ Tregs-1",23
+"Tumor","CD4+ Tregs-1",3123
+"Normal","CD4+ Tregs-2",10
+"Tumor","CD4+ Tregs-2",1208
+"Normal","CD8+ T-1",63
+"Tumor","CD8+ T-1",2526
+"Normal","CD8+ T-2",22
+"Tumor","CD8+ T-2",2120
+"Normal","CD8+ T-3",4
+"Tumor","CD8+ T-3",884
+"Normal","CD8+ Tdys",13
+"Tumor","CD8+ Tdys",1343
+"Normal","DC1 (CLEC9A+)",14
+"Tumor","DC1 (CLEC9A+)",213
+"Normal","DC2 (CD1C+)",67
+"Tumor","DC2 (CD1C+)",1327
+"Normal","DC3 (CCR7+)",4
+"Tumor","DC3 (CCR7+)",358
+"Normal","FCRL4+ B cell",128
+"Tumor","FCRL4+ B cell",1762
+"Normal","GC B cell",173
+"Tumor","GC B cell",422
+"Normal","Macrophage",20
+"Tumor","Macrophage",1817
+"Tumor","Malignant",7581
+"Normal","Monocyte",11
+"Tumor","Monocyte",534
+"Normal","NK",14
+"Tumor","NK",694
+"Normal","Non-malignant epithelial",200
+"Tumor","Non-malignant epithelial",466
+"Normal","pDC",60
+"Tumor","pDC",766
+"Normal","Plasma cell",201
+"Tumor","Plasma cell",1821

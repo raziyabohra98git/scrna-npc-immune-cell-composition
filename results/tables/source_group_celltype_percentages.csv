@@ -1,0 +1,52 @@
+"Group","CellType","Percentage"
+"Normal","B cell-1",29.655439411537
+"Tumor","B cell-1",11.4149692397991
+"Normal","B cell-2",16.298877274487
+"Tumor","B cell-2",10.7215060542162
+"Normal","B cell-3",5.84591560201316
+"Tumor","B cell-3",1.6217038760027
+"Normal","B cell-4",1.97444831591173
+"Tumor","B cell-4",1.14780113475794
+"Normal","CAFs",0.0774293457220287
+"Tumor","CAFs",0.10869328927632
+"Normal","CD4+ Tconv-1",2.74874177313202
+"Tumor","CD4+ Tconv-1",4.97163105149888
+"Normal","CD4+ Tconv-2",1.78087495160666
+"Tumor","CD4+ Tconv-2",4.70859329145019
+"Normal","CD4+ Tconv-3",1.85830429732869
+"Tumor","CD4+ Tconv-3",2.33907958522641
+"Normal","CD4+ Tregs-1",0.890437475803329
+"Tumor","CD4+ Tregs-1",6.78898284819895
+"Normal","CD4+ Tregs-2",0.387146728610143
+"Tumor","CD4+ Tregs-2",2.62602986891589
+"Normal","CD8+ T-1",2.4390243902439
+"Tumor","CD8+ T-1",5.49118497423969
+"Normal","CD8+ T-2",0.851722802942315
+"Tumor","CD8+ T-2",4.60859546531597
+"Normal","CD8+ T-3",0.154858691444057
+"Tumor","CD8+ T-3",1.92169735440534
+"Normal","CD8+ Tdys",0.503290747193186
+"Tumor","CD8+ Tdys",2.91950174996196
+"Normal","DC1 (CLEC9A+)",0.5420054200542
+"Tumor","DC1 (CLEC9A+)",0.463033412317124
+"Normal","DC2 (CD1C+)",2.59388308168796
+"Tumor","DC2 (CD1C+)",2.88471989739354
+"Normal","DC3 (CCR7+)",0.154858691444057
+"Tumor","DC3 (CCR7+)",0.778243951218452
+"Normal","FCRL4+ B cell",4.95547812620983
+"Tumor","FCRL4+ B cell",3.83035151409752
+"Normal","GC B cell",6.69763840495548
+"Tumor","GC B cell",0.917371361492141
+"Normal","Macrophage",0.774293457220287
+"Tumor","Macrophage",3.94991413230147
+"Tumor","Malignant",16.4800765200757
+"Normal","Monocyte",0.425861401471158
+"Tumor","Monocyte",1.1608443294711
+"Normal","NK",0.5420054200542
+"Tumor","NK",1.50866285515532
+"Normal","Non-malignant epithelial",7.74293457220286
+"Tumor","Non-malignant epithelial",1.0130214560553
+"Normal","pDC",2.32288037166086
+"Tumor","pDC",1.66518119171322
+"Normal","Plasma cell",7.78164924506388
+"Tumor","Plasma cell",3.95860959544358
